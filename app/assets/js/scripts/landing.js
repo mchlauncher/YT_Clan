@@ -2,6 +2,7 @@
  * Script for landing.ejs
  */
 // Requirements
+const fs = require('fs-extra');
 const { URL }                 = require('url')
 const {
     MojangRestAPI,
@@ -126,6 +127,17 @@ document.getElementById('launch_button').addEventListener('click', async e => {
         showLaunchFailure(Lang.queryJS('landing.launch.failureTitle'), Lang.queryJS('landing.launch.failureText'))
     }
 })
+
+// 스크린샷 버튼
+document.getElementById('screenshotsMediaButton').onclick = async e => {
+    const screenshotDir = path.join(
+        ConfigManager.getInstanceDirectory(),
+        ConfigManager.getSelectedServer(),
+        'screenshots'
+    );
+    await fs.ensureDir(screenshotDir);
+    shell.openPath(screenshotDir);
+};
 
 // Bind settings button
 document.getElementById('settingsMediaButton').onclick = async e => {
