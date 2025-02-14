@@ -1,8 +1,8 @@
 appId: 'YT_Clan'
-productName: 'YT Clan'
+productName: 'YT_Clan'
 artifactName: '${productName}-setup-${version}.${ext}'
 
-copyright: 'Copyright © 2024 gotiger'
+copyright: 'Copyright © 2024 gotiger (original author: © 2018-2024 Daniel Scalzi)'
 
 asar: true
 compression: 'maximum'
@@ -44,6 +44,7 @@ linux:
   synopsis: 'Modded Minecraft Launcher'
   description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.'
   category: 'Game'
+
 
 directories:
   buildResources: 'build'
